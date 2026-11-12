@@ -23,8 +23,7 @@ public class AplicacaoGestorTarefas {
                 3,
                 LocalDate.of(2026, 10, 10),
                 new BigDecimal("150.00"),
-                responsavel
-        );
+                responsavel);
 
         TarefaComum tarefaImplementarTela = new TarefaComum();
         tarefaImplementarTela.cadastrarTarefaComum(
@@ -34,8 +33,7 @@ public class AplicacaoGestorTarefas {
                 2,
                 LocalDate.of(2026, 10, 12),
                 new BigDecimal("300.00"),
-                responsavel
-        );
+                responsavel);
 
         TarefaUrgente tarefaValidarAplicacao = new TarefaUrgente();
         tarefaValidarAplicacao.cadastrarTarefaUrgente(
@@ -46,8 +44,7 @@ public class AplicacaoGestorTarefas {
                 LocalDate.of(2026, 10, 8),
                 new BigDecimal("500.00"),
                 responsavel,
-                "Publicação bloqueada"
-        );
+                "Publicação bloqueada");
 
         GestorTarefas gestor = new GestorTarefas();
         gestor.adicionarTarefa(tarefaRevisarRequisitos);
@@ -57,8 +54,7 @@ public class AplicacaoGestorTarefas {
         System.out.println("=== GESTOR DE TAREFAS ===");
         System.out.println(
                 "Quantidade de tarefas: "
-                + gestor.obterQuantidadeTarefas()
-        );
+                        + gestor.obterQuantidadeTarefas());
         System.out.println();
 
         gestor.exibirResumo();
@@ -80,11 +76,12 @@ public class AplicacaoGestorTarefas {
 
         if (prioritaria != null) {
             System.out.println(
-                    "Próxima tarefa: " + prioritaria.obterTitulo()
-            );
+                    "Próxima tarefa: " + prioritaria.obterTitulo());
         }
 
         System.out.println();
+        System.out.println(
+                "Tarefas pendentes: " + gestor.contarPendentes());
         gestor.iniciarTarefasPendentes();
         gestor.exibirResumo();
     }
