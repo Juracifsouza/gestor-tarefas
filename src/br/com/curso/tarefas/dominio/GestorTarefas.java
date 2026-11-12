@@ -33,8 +33,7 @@ public class GestorTarefas {
         Tarefa maiorPrioridade = tarefas.get(0);
 
         for (Tarefa tarefa : tarefas) {
-            if (tarefa.calcularPrioridade()
-                    > maiorPrioridade.calcularPrioridade()) {
+            if (tarefa.calcularPrioridade() > maiorPrioridade.calcularPrioridade()) {
                 maiorPrioridade = tarefa;
             }
         }
@@ -50,6 +49,18 @@ public class GestorTarefas {
         }
     }
 
+    public int contarPendentes() {
+        int quantidade = 0;
+
+        for (Tarefa tarefa : tarefas) {
+            if (tarefa.estaPendente()) {
+                quantidade++;
+            }
+        }
+
+        return quantidade;
+    }
+
     public void exibirTarefasDoResponsavel(String matricula) {
         for (Tarefa tarefa : tarefas) {
             if (tarefa.possuiResponsavel(matricula)) {
@@ -62,15 +73,14 @@ public class GestorTarefas {
         for (Tarefa tarefa : tarefas) {
             System.out.println(
                     tarefa.obterCodigo()
-                    + " - "
-                    + tarefa.obterTitulo()
-                    + " - tipo: "
-                    + tarefa.obterTipo()
-                    + " - prioridade: "
-                    + tarefa.calcularPrioridade()
-                    + " - situação: "
-                    + tarefa.obterSituacao()
-            );
+                            + " - "
+                            + tarefa.obterTitulo()
+                            + " - tipo: "
+                            + tarefa.obterTipo()
+                            + " - prioridade: "
+                            + tarefa.calcularPrioridade()
+                            + " - situação: "
+                            + tarefa.obterSituacao());
         }
     }
 }
