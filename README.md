@@ -16,4 +16,4 @@ Descrição: Gestor de tarefas em Java para praticar Git.
 
 ## Autoria
 
-Projeto didático mantido por SEU NOME.
+Projeto didático mantido por Juraci Francisco de Sozuza.
